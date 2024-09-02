@@ -56,8 +56,7 @@ public class DocumentServiceImpl implements DocumentService {
     private DocumentDto convertEntityToDto(Document document) {
         DocumentDto documentDto = new DocumentDto();
         String[] title = document.getTitle().split("");
-        documentDto.setTitle(title[0]);
-        documentDto.setTitle(title[1]);
+        documentDto.setTitle(document.getTitle());
         documentDto.setContent(document.getContent());
         documentDto.setAuthor(document.getAuthor());
         return documentDto;
