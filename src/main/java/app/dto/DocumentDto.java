@@ -21,5 +21,7 @@ public class DocumentDto {
 
     @NotEmpty(message = "Author should not be empty")
     private String author;
+    @NotEmpty(message = "Instant should not be empty")
+    private String instant;
 
 }

@@ -41,7 +41,7 @@ public class AppDocumentDetailsService implements UserDetailsService{
     }
     private Collection<? extends GrantedAuthority> mapRolesToAuthorities(Collection<Author> authors) {
         return authors.stream()
-                .map(role -> new SimpleGrantedAuthority(role.getName()))
+                .map(author -> new SimpleGrantedAuthority(author.getName()))
                 .collect(Collectors.toList());
     }
 

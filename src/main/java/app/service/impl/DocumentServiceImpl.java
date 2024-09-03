@@ -59,6 +59,7 @@ public class DocumentServiceImpl implements DocumentService {
         documentDto.setTitle(document.getTitle());
         documentDto.setContent(document.getContent());
         documentDto.setAuthor(document.getAuthor());
+        documentDto.setInstant(documentDto.getInstant());
         return documentDto;
     }
 

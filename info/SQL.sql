@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS documents
   title VARCHAR(255),
   content VARCHAR(255),
   author VARCHAR(255),
+  instant VARCHAR(255),
   PRIMARY KEY (id)
 );
 

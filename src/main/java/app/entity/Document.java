@@ -30,6 +30,10 @@ public class Document implements Serializable {
     private String content;
     @Column(nullable = false, unique = true)
     private String author;
+    @Column(nullable = false)
+    private String instant;
+
+
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "documents_author",

@@ -21,6 +21,6 @@ public class Author {
     private Long id;
     @Column(nullable = false, unique = true)
     private String name;
-    @ManyToMany(mappedBy = "author")
+    @ManyToMany(mappedBy = "authors")
     private List<Document> documents;
 }
