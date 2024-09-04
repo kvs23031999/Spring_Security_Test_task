@@ -35,7 +35,7 @@ public class DocumentServiceImpl implements DocumentService {
 
         Author author = authorRepository.findByName("Author_ADMIN");
         if ( author == null ) {
-            author = checkRoleExist();
+            author = checkAuthorExist();
         }
         document.setAuthors(List.of(author));
         documentRepository.save(document);
@@ -63,7 +63,7 @@ public class DocumentServiceImpl implements DocumentService {
         return documentDto;
     }
 
-    private Author checkRoleExist() {
+    private Author checkAuthorExist() {
         Author author = new Author();
         author.setName("Author_ADMIN");
         return authorRepository.save(author);

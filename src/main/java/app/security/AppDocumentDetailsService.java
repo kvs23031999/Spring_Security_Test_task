@@ -33,13 +33,13 @@ public class AppDocumentDetailsService implements UserDetailsService{
             return new org.springframework.security.core.userdetails.User(
                     document.getTitle(),
                     document.getContent(),
-                    mapRolesToAuthorities(document.getAuthors()));
+                    mapAuthorToAuthorities(document.getAuthors()));
 
         } else {
             throw new UsernameNotFoundException("Invalid login or password.");
         }
     }
-    private Collection<? extends GrantedAuthority> mapRolesToAuthorities(Collection<Author> authors) {
+    private Collection<? extends GrantedAuthority> mapAuthorToAuthorities(Collection<Author> authors) {
         return authors.stream()
                 .map(author -> new SimpleGrantedAuthority(author.getName()))
                 .collect(Collectors.toList());
